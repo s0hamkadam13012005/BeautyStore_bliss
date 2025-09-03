@@ -5,6 +5,8 @@ import cookieParser from 'cookie-parser';
 const app = express();
 import authRoute from './routes/auth.route.js';
 import productRoute from './routes/product.route.js';
+import bannerRoute from './routes/banner.route.js';
+import userRoute from './routes/user.route.js';
 
 app.use(express.json());
 
@@ -21,6 +23,8 @@ app.use(errorHandler);
 
 
 app.use('/api/v1/auth', authRoute);
-app.use('/api/products', productRoute);
+app.use('/api/v1/products', productRoute);
+app.use('/api/v1/banner',bannerRoute);
+app.use('/api/v1/users',userRoute);
 
 export default app;
